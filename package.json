@@ -1,0 +1,16 @@
+{
+  "name": "sat-facturacion-experiment",
+  "version": "1.0.0",
+  "description": "Experimento para facilitar la facturación a través del portal del SAT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.1"
+  },
+  "dependencies": {}
+}

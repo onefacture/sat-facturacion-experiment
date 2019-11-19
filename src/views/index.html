@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prueba facturación - automatizada</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <style type="text/css">
+            webview {
+        display: block;   /* iframes are inline by default */
+        border: none;     /* Reset default border */
+        height: 80vh;     /* Viewport-relative units */
+        width: 95vw;
+      }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-mobile">
+                        <div class="column is-three-fifths is-offset-one-fifth">
+                            <h3 id="loader-message">Cargando... <button onclick="SatWebviewService.clickGoToFielPage()">Click aquí sino ha cargado en 2 segundos</button></h3>
+                            <form id="main-form" class="is-hidden">
+                                <div class="field">
+                                    <label class="label">Certificado</label>
+                                    <div class="control">
+                                        <input class="input" type="file" name="certificate" id="certificate" onchange="handleInputFile(this)" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Contraseña</label>
+                                    <div class="control">
+                                        <input class="input" type="password" name="password" id="password" placeholder="Contraseña" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Certificado</label>
+                                    <div class="control">
+                                        <input class="input" type="file" name="privateKey" id="privateKey" onchange="handleInputFile(this)" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="button is-link is-pulled-right">Inicia sesión</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modalWebview">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <webview
+                    id="satWebview"
+                    class="hide-webview"
+                    webpreferences="allowRunningInsecureContent"
+                    disablewebsecurity
+                    preload="../scripts/preload-sat-webview.js"
+                    style="display:inline-flex; width:100%; height:600px;"
+                ></webview>
+            </div>
+            <button class="modal-close is-large" aria-label="close" onclick="modalWebview.classList.toggle('is-active');"></button>
+        </div>
+
+        <!--button onclick="modalWebview.classList.toggle('is-active');">Open modal webview</button-->
+
+        <script src="../scripts/index.js"></script>
+    </body>
+</html>
