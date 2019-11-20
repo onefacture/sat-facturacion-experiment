@@ -11,6 +11,4 @@ npm run start
 
 ## Troubleshooting
 
-* No arranca en linux
-
-añadir al comando `start` de `package.json` un `--no-sandbox` al final. Según [esto](https://github.com/electron/electron/issues/17972) es un pedote lo del sandbox.
+* **No arranca en linux**: añadir al comando `start` de `package.json` un `--no-sandbox` al final. Según [esto](https://github.com/electron/electron/issues/17972) es un pedote lo del sandbox.
