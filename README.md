@@ -4,8 +4,10 @@ Experimento para facilitar la facturación a través del portal del SAT.
 
 ## Desarrollo
 
-* `npm install`
-* `npm run start`
+```bash
+npm install
+npm run start
+```
 
 ## Troubleshooting
 
